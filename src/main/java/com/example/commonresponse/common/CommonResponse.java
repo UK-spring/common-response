@@ -8,13 +8,13 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class CommonResponse<T> {
 
-    private final HttpStatus httpStatus;
+    private final int httpStatus;
     private final String message;
 //    @JsonInclude(JsonInclude.Include.NON_NULL)
     private final T data;
 
     private CommonResponse(HttpStatus httpStatus, String message, T data) {
-        this.httpStatus = httpStatus;
+        this.httpStatus = httpStatus.value();
         this.message = message;
         this.data = data;
     }
