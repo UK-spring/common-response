@@ -83,4 +83,13 @@ public class TestController {
 
     }
 
+    @PostMapping("/v6/test")
+    public ResponseEntity<CommonResponse<TestResponseDto>> testV6(@RequestBody TestRequestDto dto) {
+
+        return ResponseEntity
+                .status(SuccessCode.OK.getStatus())
+                .body(CommonResponse.of(SuccessCode.OK, new TestResponseDto("데이터")));
+
+    }
+
 }
